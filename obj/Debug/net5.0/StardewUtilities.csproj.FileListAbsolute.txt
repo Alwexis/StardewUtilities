@@ -1,0 +1,10 @@
+C:\Users\Ariel\source\repos\StardewUtilities\bin\Debug\net5.0\StardewUtilities.deps.json
+C:\Users\Ariel\source\repos\StardewUtilities\bin\Debug\net5.0\StardewUtilities.dll
+C:\Users\Ariel\source\repos\StardewUtilities\bin\Debug\net5.0\StardewUtilities.pdb
+C:\Users\Ariel\source\repos\StardewUtilities\obj\Debug\net5.0\StardewUtilities.csproj.AssemblyReference.cache
+C:\Users\Ariel\source\repos\StardewUtilities\obj\Debug\net5.0\StardewUtilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ariel\source\repos\StardewUtilities\obj\Debug\net5.0\StardewUtilities.AssemblyInfoInputs.cache
+C:\Users\Ariel\source\repos\StardewUtilities\obj\Debug\net5.0\StardewUtilities.AssemblyInfo.cs
+C:\Users\Ariel\source\repos\StardewUtilities\obj\Debug\net5.0\StardewUtilities.csproj.CoreCompileInputs.cache
+C:\Users\Ariel\source\repos\StardewUtilities\obj\Debug\net5.0\StardewUtilities.dll
+C:\Users\Ariel\source\repos\StardewUtilities\obj\Debug\net5.0\StardewUtilities.pdb

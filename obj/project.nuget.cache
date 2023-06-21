@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0IZzXQzaBHcBaRlZVbfLa2GMdtQoa4cYY9g5WbKiMjd44FsIIvZKK5jdNC/QrvkTSAzS4tncqRrtUYfzRah56Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ariel\\source\\repos\\StardewUtilities\\StardewUtilities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ariel\\.nuget\\packages\\pathoschild.stardew.modbuildconfig\\4.1.0\\pathoschild.stardew.modbuildconfig.4.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

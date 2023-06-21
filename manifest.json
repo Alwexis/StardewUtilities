@@ -1,0 +1,16 @@
+{
+  "Name": "Stardew Utilities",
+  "Author": "Alwexis",
+  "Version": "1.0.0",
+  "Description": "A very small Mod that adds some new features to the game. Such as better dates, better pets, time modifier, etc.",
+  "UniqueID": "alwexis.stardewutilities",
+  "EntryDll": "StardewUtilities.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": [],
+  "Dependencies": [
+    {
+      "UniqueID": "spacechase0.GenericModConfigMenu",
+      "IsRequired": false
+    }
+  ]
+}
