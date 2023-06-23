@@ -7,15 +7,10 @@ using System.Threading.Tasks;
 namespace StardewUtilities {
     public sealed class ModConfig {
         // Time Module
-        public Dictionary<string, object> TimeModule { get; set; }
-        public ModConfig() {
-            TimeModule = new Dictionary<string, object> {
-                { "Enabled", true },
-                { "Indoors", 1 },
-                { "Outdoors", 1 },
-                { "Mines", 1 },
-                { "DeepWoods", 1 }
-            };
-        }
+        public Boolean TimeModule_Enabled = true;
+        public int TimeModule_Indoors = 1;
+        public int TimeModule_Outdoors = 1;
+        public int TimeModule_Mines = 1;
+        public int TimeModule_DeepWoods = 1;
     }
 }

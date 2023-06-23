@@ -21,7 +21,7 @@ namespace StardewUtilities {
             this.LoadModules(helper);
         }
 
-        private void Alwexis_OnGameLaunched(object sender, EventArgs e) {
+        public void Alwexis_OnGameLaunched(object sender, EventArgs e) {
             // get Generic Mod Config Menu's API (if it's installed)
             var configMenu = this.Helper.ModRegistry.GetApi<IGenericModConfigMenuApi>("spacechase0.GenericModConfigMenu");
             if (configMenu is null)
@@ -48,45 +48,45 @@ namespace StardewUtilities {
                 mod: this.ModManifest,
                 name: () => "Enabled",
                 tooltip: () => "Turn on or off the Time Module.",
-                getValue: () => (bool)this.Config.TimeModule[ "Enabled" ],
-                setValue: value => this.Config.TimeModule[ "Enabled" ] = value
+                getValue: () => (bool)this.Config.TimeModule_Enabled,
+                setValue: value => this.Config.TimeModule_Enabled = value
             );
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => "Outdoors Modifier",
                 tooltip: () => "How much time passes in the Outdoors.",
-                getValue: () => (int)this.Config.TimeModule[ "Outdoors" ],
-                setValue: value => this.Config.TimeModule[ "Outdoors" ] = value,
+                getValue: () => (int)this.Config.TimeModule_Outdoors,
+                setValue: value => this.Config.TimeModule_Outdoors = value,
                 min: 1,
-                max: 10
+                max: 8
             );
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => "Indoors Modifier",
                 tooltip: () => "How much time passes Indoors.",
-                getValue: () => (int)this.Config.TimeModule[ "Indoors" ],
-                setValue: value => this.Config.TimeModule[ "Indoors" ] = value,
+                getValue: () => (int)this.Config.TimeModule_Indoors,
+                setValue: value => this.Config.TimeModule_Indoors = value,
                 min: 1,
-                max: 10
+                max: 8
             );
             configMenu.AddNumberOption(mod: this.ModManifest,
                                        name: () => "Mines Modifier",
                                        tooltip: () => "How much time passes in the Mines.",
-                                       getValue: () => (int)this.Config.TimeModule[ "Mines" ],
-                                       setValue: value => this.Config.TimeModule[ "Mines" ] = value,
+                                       getValue: () => (int)this.Config.TimeModule_Mines,
+                                       setValue: value => this.Config.TimeModule_Mines = value,
                                        min: 1,
-                                       max: 10);
+                                       max: 8);
             configMenu.AddNumberOption(mod: this.ModManifest,
                                        name: () => "Deep Woods Modifier",
                                        tooltip: () => "How much time passes in the Deep Woods.",
-                                       getValue: () => (int)this.Config.TimeModule[ "DeepWoods" ],
-                                       setValue: value => this.Config.TimeModule[ "DeepWoods" ] = value,
+                                       getValue: () => (int)this.Config.TimeModule_DeepWoods,
+                                       setValue: value => this.Config.TimeModule_DeepWoods = value,
                                        min: 1,
-                                       max: 10);
+                                       max: 8);
         }
 
         private void LoadModules(IModHelper helper) {
-            if ((bool)Config.TimeModule[ "Enabled" ]) {
+            if ((bool)Config.TimeModule_Enabled) {
                 TimeModule timeModule = new();
                 timeModule.Load(helper);
             }

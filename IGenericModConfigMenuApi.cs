@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework;
 
 
 namespace StardewUtilities {
-    internal interface IGenericModConfigMenuApi {
+    public interface IGenericModConfigMenuApi {
         /*********
 ** Methods
 *********/

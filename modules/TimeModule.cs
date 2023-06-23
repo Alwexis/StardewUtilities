@@ -4,10 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using StardewUtilities.modules;
 
 namespace StardewUtilities.modules {
-    internal class TimeModule : IModule {
+    public class TimeModule {
         public string Name => "TimeModule";
 
         private ModConfig Config;
@@ -22,20 +24,16 @@ namespace StardewUtilities.modules {
         }
         private void Alwexis_TimeHandler(object sender, EventArgs e) {
             if (!Context.IsWorldReady) return;
-
             Farmer farmer = Game1.player;
-            long rawTimeModifier;
             if (farmer.currentLocation.Name == "Woods") {
-                rawTimeModifier = (long)this.Config.TimeModule[ "DeepWoods" ];
+                TimeModifier = this.Config.TimeModule_DeepWoods;
             } else if (farmer.currentLocation.Name == "MineShaft" || farmer.currentLocation.Name == "Mine") {
-                rawTimeModifier = (long)this.Config.TimeModule[ "DeepWoods" ];
+                TimeModifier = this.Config.TimeModule_Mines;
             } else if (farmer.currentLocation.IsOutdoors) {
-                rawTimeModifier = (long)this.Config.TimeModule[ "DeepWoods" ];
+                TimeModifier = this.Config.TimeModule_Outdoors;
             } else {
-                rawTimeModifier = (long)this.Config.TimeModule[ "DeepWoods" ];
+                TimeModifier = this.Config.TimeModule_Indoors;
             }
-            TimeModifier = Convert.ToInt32(rawTimeModifier);
-
             int ActualTime;
             if (Game1.gameTimeInterval < LastTime) {
                 ActualTime = Game1.gameTimeInterval;
@@ -43,9 +41,18 @@ namespace StardewUtilities.modules {
             } else {
                 ActualTime = Game1.gameTimeInterval - LastTime;
             }
-            double Modifier = TimeModifier < 2 ? 1 : 1 - (TimeModifier / 10);
+            // TimeModifier = Modifier;
+            double Modifier = CalculateModifier(TimeModifier);
             Game1.gameTimeInterval = LastTime + (int)(ActualTime * Modifier);
             LastTime = Game1.gameTimeInterval;
+        }
+
+        private double CalculateModifier(int rawTimeModifier) {
+            if (rawTimeModifier < 0) {
+                return 1.0;
+            } else {
+                return 1 - (rawTimeModifier / 10.0);
+            }
         }
     }
 }
